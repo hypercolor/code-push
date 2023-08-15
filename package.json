@@ -1,0 +1,42 @@
+{
+  "name": "@hypercolor/code-push",
+  "version": "0.0.1",
+  "description": "Used by the Hypercolor Digital team to deliver OTA updates to React Native apps.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "/**/*.d.ts",
+    "/**/*.js",
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
+  "private": false,
+  "prepublish": "tsc --build --clean && tsc --build",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build"
+  },
+  "keywords": [
+    "OTA Deployment",
+    "OTA Updates",
+    "Cloud Deployment",
+    "React Native"
+  ],
+  "devDependencies": {
+    "code-push": "^4.0.4",
+    "typescript": "^4.9.4"
+  },
+  "author": "Seth Uschuk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypercolor/code-push.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hypercolor/code-push/issues"
+  },
+  "homepage": "https://github.com/hypercolor/code-push#readme",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
