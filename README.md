@@ -1,4 +1,4 @@
-# Hypercolor Promise Queue
+# Hypercolor Code Push Manager
 
 ## Table of Contents
 
