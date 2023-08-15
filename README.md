@@ -161,23 +161,23 @@ deployment in place.
 Example:
 
 ```typescript
-import { CodePushManager } from '@hypercolor/code-push';
+import { CodePushManager, CodePushDeployment } from '@hypercolor/code-push';
 
 const codePushManager = new CodePushManager(
-    process.env.CODE_PUSH_API_TOKEN,
-    process.env.CODE_PUSH_APP_NAME
+        process.env.CODE_PUSH_API_TOKEN,
+        process.env.CODE_PUSH_APP_NAME
 );
 
 const exampleFunction = async (
-    os: CodePushOs,
-    sourceDeploymentName: string,
-    destinationDeploymentName: string,
-): Promise<void> => {
+        os: CodePushOs,
+        sourceDeploymentName: string,
+        destinationDeploymentName: string,
+): Promise<CodePushDeployment> => {
 
   const promoted = await codePushManager.promoteDeployment(
-      os,
-      sourceDeploymentName,
-      destinationDeploymentName,
+          os,
+          sourceDeploymentName,
+          destinationDeploymentName,
   );
   console.log("Promoted: ", promoted);
   return promoted;
