@@ -1,6 +1,6 @@
 {
   "name": "@hypercolor/code-push",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Used by the Hypercolor Digital team to deliver OTA updates to React Native apps.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -23,7 +23,7 @@
     "React Native"
   ],
   "dependencies": {
-    "code-push": "^4.0.4"
+    "code-push": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^16.7.13",

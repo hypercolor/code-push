@@ -22,12 +22,6 @@ helper package that supports a CodePushManager class with type safe methods.
 This tool is used by the team at Hypercolor Digital to send over the air (OTA) code deployment updates to React Native
 apps. This tool is engineered to support three environments: dev, demo and prod.
 
-The main dependency of this package, MS's CodePush package, uses dependencies that are
-out of date and can may cause security vulnerabilities. For this reason, it is strongly
-recommended to install this package as a dev dependency.
-
-This package is meant to be used as a tool to automate the deployment process, not as a dependency in your server or
-frontend code. This package is not meant to be used in a production environment.
 
 ## Installation
 
