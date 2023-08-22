@@ -1,6 +1,6 @@
 {
   "name": "@hypercolor/code-push",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Used by the Hypercolor Digital team to deliver OTA updates to React Native apps.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,11 +22,13 @@
     "Cloud Deployment",
     "React Native"
   ],
+  "dependencies": {
+    "code-push": "^4.0.4"
+  },
   "devDependencies": {
     "@types/node": "^16.7.13",
     "tslint": "^6.1.3",
     "tslint-loader": "^3.5.4",
-    "code-push": "^4.0.4",
     "typescript": "^4.9.4"
   },
   "author": "Seth Uschuk",
