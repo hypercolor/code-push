@@ -92,7 +92,7 @@ export class CodePushManager {
       return deploymentMetrics;
     }
     catch (err: any) {
-      throw new Error('Error getting deployment metrics: ' + err);
+      throw {code: 500, message: 'Error Getting deployment metrics', error: err};
     }
   }
 
@@ -105,7 +105,7 @@ export class CodePushManager {
       return;
     }
     catch (err: any) {
-      throw new Error('Error patching release: ' + err);
+      throw {code: 500, message: 'Error patching deployment', error: err};
     }
   }
 
@@ -118,7 +118,7 @@ export class CodePushManager {
       return promoted;
     }
     catch (err: any) {
-      throw new Error('Error promoting deployment: ' + err);
+      throw {code: 500, message: "Error promoting deployment",error: err};
     }
   }
 
@@ -131,7 +131,7 @@ export class CodePushManager {
       return;
     }
     catch (err: any) {
-      throw new Error('Error rolling back deployment: ' + err);
+      throw {code: 500, message: 'Error rolling back deployment',error: err};
     }
   }
 
@@ -156,7 +156,7 @@ export class CodePushManager {
       return;
     }
     catch (err: any) {
-      throw new Error('Error releasing deployment: ' + err);
+      throw {code: 500, message: 'Error releasing deployment',error: err};
     }
   }
 }

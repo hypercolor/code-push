@@ -79,7 +79,7 @@ class CodePushManager {
             return deploymentMetrics;
         }
         catch (err) {
-            throw new Error('Error getting deployment metrics: ' + err);
+            throw { code: 500, message: 'Error Getting deployment metrics', error: err };
         }
     }
     async patchDeployment(os, deploymentName, label, updateMetadata, verbose) {
@@ -91,7 +91,7 @@ class CodePushManager {
             return;
         }
         catch (err) {
-            throw new Error('Error patching release: ' + err);
+            throw { code: 500, message: 'Error patching deployment', error: err };
         }
     }
     async promoteDeployment(os, sourceDeploymentName, destinationDeploymentName, verbose) {
@@ -103,7 +103,7 @@ class CodePushManager {
             return promoted;
         }
         catch (err) {
-            throw new Error('Error promoting deployment: ' + err);
+            throw { code: 500, message: "Error promoting deployment", error: err };
         }
     }
     async rollbackDeployment(os, deploymentName, targetRelease, verbose) {
@@ -115,7 +115,7 @@ class CodePushManager {
             return;
         }
         catch (err) {
-            throw new Error('Error rolling back deployment: ' + err);
+            throw { code: 500, message: 'Error rolling back deployment', error: err };
         }
     }
     async releaseDeployment(os, deploymentName, filePath, targetBinaryVersion, updateMetadata, verbose) {
@@ -130,7 +130,7 @@ class CodePushManager {
             return;
         }
         catch (err) {
-            throw new Error('Error releasing deployment: ' + err);
+            throw { code: 500, message: 'Error releasing deployment', error: err };
         }
     }
 }
