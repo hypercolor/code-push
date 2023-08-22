@@ -123,11 +123,11 @@ class CodePushManager {
             console.log(`Upload progress: ${progress}%`);
         };
         try {
-            await this.codePush.release(this.appName + '-' + os, deploymentName, filePath, targetBinaryVersion, updateMetadata, uploadProgressCallback);
+            const release = await this.codePush.release(this.appName + '-' + os, deploymentName, filePath, targetBinaryVersion, updateMetadata, uploadProgressCallback);
             if (verbose) {
-                console.log('Release Requested');
+                console.log('Release Requested', release);
             }
-            return;
+            return release;
         }
         catch (err) {
             throw { code: 500, message: 'Error releasing deployment', error: err };

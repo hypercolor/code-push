@@ -135,14 +135,14 @@ export class CodePushManager {
     }
   }
 
-  public async releaseDeployment(os: CodePushOs, deploymentName: string, filePath: string, targetBinaryVersion: string, updateMetadata: CodePushPackageInformation, verbose?: boolean): Promise<void> {
+  public async releaseDeployment(os: CodePushOs, deploymentName: string, filePath: string, targetBinaryVersion: string, updateMetadata: CodePushPackageInformation, verbose?: boolean): Promise<CodePushPackage> {
 
     const uploadProgressCallback = (progress: number) => {
       console.log(`Upload progress: ${progress}%`);
     }
 
     try {
-      await this.codePush.release(
+      const release = await this.codePush.release(
         this.appName + '-' + os,
         deploymentName,
         filePath,
@@ -151,9 +151,9 @@ export class CodePushManager {
         uploadProgressCallback,
       );
       if (verbose) {
-        console.log('Release Requested');
+        console.log('Release Requested', release);
       }
-      return;
+      return release;
     }
     catch (err: any) {
       throw {code: 500, message: 'Error releasing deployment',error: err};
